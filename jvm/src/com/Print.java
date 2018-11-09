@@ -2,20 +2,25 @@ package com;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.alibaba.fastjson.JSONObject;
 
 
 public class Print {
 
 	public static void main(String[] args) {
-
 		//Print.ticket();
-		
+
 		String t = " +86,321(+6+8+8686)（）+86、/?.,0d3,217,";
 		t = t.replaceAll("\\+86", "");
 		System.out.println(t);
@@ -42,6 +47,9 @@ public class Print {
 			System.out.println(m);
 		}
 		
+		while(true){
+			System.err.println(new Random().nextInt(1000) == 888 ? "shooting" : "");
+		}
 	}
 	
 	class Man {

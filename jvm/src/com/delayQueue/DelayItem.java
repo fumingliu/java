@@ -37,14 +37,13 @@ public class DelayItem<T extends Runnable> implements Delayed {
 				return -1;
 			} else if (diff > 0) {
 				return 1;
-			} else if (n < x.n) {
-				return -1;
-			} else {
+			} else if (n > x.n) {
 				return 1;
+			} else {
+				return -1;
 			}
 		}
-		long d = (getDelay(TimeUnit.NANOSECONDS) - other
-				.getDelay(TimeUnit.NANOSECONDS));
+		long d = getDelay(TimeUnit.NANOSECONDS) - other.getDelay(TimeUnit.NANOSECONDS);
 		return (d == 0) ? 0 : ((d < 0) ? -1 : 1);
 	}
 
